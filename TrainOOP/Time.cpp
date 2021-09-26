@@ -9,10 +9,15 @@ Time::Time() {
 }
 
 
+/*TODO: почему-то не присваивает*/
 Time::Time(int hour, int minute) {
 	if (isValidTime()) {
 		this->hour = hour;
 		this->minute = minute;
+	}
+	else {
+		hour = 0;
+		minute = 0;
 	}
 }
 
@@ -41,7 +46,6 @@ void Time::setMinute(int minute) {
 }
 
 
-/*TODO: нужно дописать*/
 void Time::print() {
 	cout <<"\nВремя отправления: ";
 
@@ -59,6 +63,7 @@ void Time::print() {
 }
 
 
+/*TODO: нужно дописать*/
 void Time::userInput() {
 	int hour;
 	int minute;
