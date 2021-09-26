@@ -1,5 +1,6 @@
 #include "Time.h"
 
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 using namespace std;
 
@@ -11,13 +12,13 @@ Time::Time() {
 
 /*TODO: почему-то не присваивает*/
 Time::Time(int hour, int minute) {
-	if (isValidTime()) {
+	if (isValidHour(hour) && isValidMinute(minute)) {
 		this->hour = hour;
 		this->minute = minute;
 	}
 	else {
-		hour = 0;
-		minute = 0;
+		this->hour = 0;
+		this->minute = 0;
 	}
 }
 
@@ -65,29 +66,22 @@ void Time::print() {
 
 /*TODO: нужно дописать*/
 void Time::userInput() {
-	int hour;
-	int minute;
+	int hour = 0;
+	int minute = 0;
 	string input;
 
-	cout << "Время отправления (ЧЧ:ММ)";
+	cout << "\nВремя отправления (ЧЧ:ММ)\n";
 	cin >> input;
 
-	for (int i = 0; i < input.length(); i++) {
-		if (isdigit(input[i])) {
+	char* word = strtok(new char[input.length()], ":");	//разбили строку input на слова по ":"
 
-		}
+	int inputOnlyNumbers = 0;
+	while (word != NULL) {
+		cout << word << "n";
+		word = strtok(NULL, ":");
 	}
 
 
-
-}
-
-
-bool Time::isValidTime() {
-	if (isValidHour(hour) && isValidMinute(minute))
-		return true;
-	else
-		return false;
 }
 
 

@@ -18,5 +18,6 @@ int main() {
 
 	Time time = Time(12, 22);
 	time.print();
+	time.userInput();
 
 }

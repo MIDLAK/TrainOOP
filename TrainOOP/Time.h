@@ -17,7 +17,6 @@ public:
 	void userInput();
 
 private:
-	bool isValidTime();
 	bool isValidHour(int hour);
 	bool isValidMinute(int minute);
 };
