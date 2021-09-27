@@ -8,6 +8,7 @@
 
 #include "Main.h"
 #include "Time.h"
+#include "Date.h"
 #include <iostream>
 
 
@@ -16,8 +17,11 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	Time time = Time(12, 22);
+	Time time = Time(55, 22);
 	time.print();
 	time.userInput();
+
+	Date date = Date(27, 9, 2021);
+	date.print();
 
 }

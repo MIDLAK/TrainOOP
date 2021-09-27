@@ -10,7 +10,6 @@ Time::Time() {
 }
 
 
-/*TODO: почему-то не присваивает*/
 Time::Time(int hour, int minute) {
 	if (isValidHour(hour) && isValidMinute(minute)) {
 		this->hour = hour;
@@ -73,11 +72,12 @@ void Time::userInput() {
 	cout << "\nВремя отправления (ЧЧ:ММ)\n";
 	cin >> input;
 
+	char* p = new char[input.length()];
 	char* word = strtok(new char[input.length()], ":");	//разбили строку input на слова по ":"
 
 	int inputOnlyNumbers = 0;
 	while (word != NULL) {
-		cout << word << "n";
+		cout << *word << "\n";
 		word = strtok(NULL, ":");
 	}
 
