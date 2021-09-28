@@ -10,6 +10,8 @@
 #include "Time.h"
 #include "Date.h"
 #include "Passenger.h"
+#include "TrainRoute.h"
+#include "Train.h"
 #include <iostream>
 
 
@@ -31,5 +33,14 @@ int main() {
 	pas.print();
 	pas.userInput();
 	pas.print();
+
+	Date d1 = Date(28, 9, 2021);
+	Time t1 = Time(21, 48);
+	Date d2 = Date(1, 10, 2021);
+	Time t2 = Time(6, 55);
+	TrainRoute rt = TrainRoute("Ѕарнаул", "ќмск", d1, t1, d2, t2);
+	
+	Train tr = Train(rt, 654, 200);
+	
 
 }

@@ -2,24 +2,26 @@
 #include <iostream>
 #include <string.h>
 
-#include "Date.h"
-#include "Time.h"
+#include "TrainRoute.h"
 
 using namespace std;
 
 class Train
 {
 private:
-	string departure;
-	string destination;
-	int trianID;
-	int capasity;	//максимальное кол-во пассажиров
-	Date departureDate;
-	Time departureTime;
-	Date destinationDate;
-	Time destinationTime;
+	TrainRoute route;
+	int trainID;
+	int capacity;	//максимальное кол-во пассажиров
 public:
 	Train();
-	Train()
+	Train(TrainRoute route, int trainID, int capacity);
+	void setTrainID(int trainID);
+	int getTrainID();
+	void setCapacity(int capacity);
+	int getCapacity();
+	void tutu();
+private:
+	bool isValidCapcity(int capacity);
+	bool isValidTrainID(int trainID);
 };
 

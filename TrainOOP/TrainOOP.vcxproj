@@ -145,6 +145,7 @@
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Train.cpp" />
     <ClCompile Include="TrainOOP.cpp" />
+    <ClCompile Include="TrainRoute.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h" />
@@ -152,6 +153,7 @@
     <ClInclude Include="Passenger.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Train.h" />
+    <ClInclude Include="TrainRoute.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
