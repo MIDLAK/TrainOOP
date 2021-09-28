@@ -29,13 +29,55 @@ int Date::getDay() {
 }
 
 
+void Date::setDay(int day) {
+	if (isValidDate(day, this->month, this->year));
+		this->day = day;
+}
+
+
 int Date::getMonth() {
 	return month;
 }
 
 
+void Date::setMonth(int month) {
+	if (isValidDate(this->day, month, this->year));
+		this->month = month;
+}
+
+
 int Date::getYear() {
 	return year;
+}
+
+
+void Date::setYear(int year) {
+	if (isValidDate(this->day, this->month, this->year));
+}
+
+
+void Date::userIput() {
+	cout << "\nВведите...";
+	cout << "\nДень: ";
+	int day = 0;
+	cin >> day;
+
+	cout << "Месяц: ";
+	int month = 0;
+	cin >> month;
+
+	cout << "Год: ";
+	int year = 0;
+	cin >> year;
+
+	if (isValidDate(day, month, year)) {
+		this->day = day;
+		this->month = month;
+		this->year = year;
+	}
+	else {
+		cout << "\nВведена некорректная дата (или сегодня 29 февраля, а я ещё об этом не позаботился)";
+	}
 }
 
 

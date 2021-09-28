@@ -9,6 +9,7 @@
 #include "Main.h"
 #include "Time.h"
 #include "Date.h"
+#include "Passenger.h"
 #include <iostream>
 
 
@@ -23,5 +24,12 @@ int main() {
 
 	Date date = Date(27, 9, 2021);
 	date.print();
+	date.userIput();
+	date.print();
+	
+	Passenger pas = Passenger("Вадим", "Калуга", 19);
+	pas.print();
+	pas.userInput();
+	pas.print();
 
 }
