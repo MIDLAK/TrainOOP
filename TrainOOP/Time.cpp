@@ -47,7 +47,7 @@ void Time::setMinute(int minute) {
 
 
 void Time::print() {
-	cout <<"\nВремя отправления: ";
+	cout <<"\n";
 
 	if (hour < 10 && minute < 10)
 		printf("0%d:0%d", hour, minute);

@@ -27,6 +27,17 @@ Train::Train(TrainRoute route, int trainID, int capacity) {
 }
 
 
+bool Train::setTrainRoute(TrainRoute route) {
+	this->route = route;
+	return true;
+}
+
+
+TrainRoute Train::getTrainRoute() {
+	return this->route;
+}
+
+
 void Train::setTrainID(int trainID) {
 	if (isValidTrainID(trainID)) {
 		this->trainID = trainID;

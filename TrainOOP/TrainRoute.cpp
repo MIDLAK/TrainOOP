@@ -12,15 +12,20 @@ TrainRoute::TrainRoute() {
 
 TrainRoute::TrainRoute(string departure, string destination, Date departureDate, Time departureTime, Date destinationDate, Time destinationTime) {
 	if (isValidDeparture(departure) && isValidDestination(destination)) {
-
+		this->departure = departure;
+		this->destination = destination;
+		this->departureDate = departureDate;
+		this->departureTime = departureTime;
+		this->destinationDate = destinationDate;
+		this->destinationTime = destinationTime;
 	}
 	else {
-		departure = "-";
-		destination = "-";
-		departureDate = Date();
-		departureTime = Time();
-		destinationDate = Date();
-		destinationTime = Time();
+		this->departure = "-";
+		this->destination = "-";
+		this->departureDate = Date();
+		this->departureTime = Time();
+		this->destinationDate = Date();
+		this->destinationTime = Time();
 	}
 }
 
@@ -101,5 +106,5 @@ bool TrainRoute::isValidDestination(string destination) {
 
 /*TODO: Написать реализацию*/
 void TrainRoute::travelTime() {
-	
+	cout << "\nВремя в пути: ";
 }

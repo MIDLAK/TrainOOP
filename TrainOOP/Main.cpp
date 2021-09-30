@@ -12,6 +12,7 @@
 #include "Passenger.h"
 #include "TrainRoute.h"
 #include "Train.h"
+#include "Ticket.h"
 #include <iostream>
 
 
@@ -41,6 +42,7 @@ int main() {
 	TrainRoute rt = TrainRoute("Ѕарнаул", "ќмск", d1, t1, d2, t2);
 	
 	Train tr = Train(rt, 654, 200);
-	
 
+	Ticket tk = Ticket(500, 125, pas, tr);
+	tk.print();
 }

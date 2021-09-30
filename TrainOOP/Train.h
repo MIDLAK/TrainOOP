@@ -19,6 +19,8 @@ public:
 	int getTrainID();
 	void setCapacity(int capacity);
 	int getCapacity();
+	bool setTrainRoute(TrainRoute route);
+	TrainRoute getTrainRoute();
 	void tutu();
 private:
 	bool isValidCapcity(int capacity);

@@ -82,7 +82,7 @@ void Date::userIput() {
 
 
 void Date::print() {
-	printf("\nДата отправления: ");
+	printf("\n");
 	if (day >= 10 && month >= 10)
 		printf("%d.%d", day, month);
 
