@@ -26,9 +26,14 @@ Passenger::Passenger(string name, string firstName, int age) {
 }
 
 
-void Passenger::setName(string name) {
-	if (isValidName(name))
+bool Passenger::setName(string name) {
+	if (isValidName(name)) {
 		this->name = name;
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 
@@ -37,9 +42,14 @@ string Passenger::getName() {
 }
 
 
-void Passenger::setFirstName(string firstName) {
-	if (isValidFirstName(firstName))
+bool Passenger::setFirstName(string firstName) {
+	if (isValidFirstName(firstName)) {
 		this->firstName = firstName;
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 
@@ -48,9 +58,14 @@ string Passenger::getFirstName() {
 }
 
 
-void Passenger::setAge(int age) {
-	if (isValidAge(age))
+bool Passenger::setAge(int age) {
+	if (isValidAge(age)) {
 		this->age = age;
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 

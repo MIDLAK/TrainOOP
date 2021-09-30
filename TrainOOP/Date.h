@@ -9,11 +9,11 @@ public:
 	Date();
 	Date(int day, int month, int year);
 	int getDay();
-	void setDay(int day);
+	bool setDay(int day);
 	int getMonth();
-	void setMonth(int month);
+	bool setMonth(int month);
 	int getYear();
-	void setYear(int year);
+	bool setYear(int year);
 	void print();
 	void userIput();
 private:

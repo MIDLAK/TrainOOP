@@ -16,11 +16,11 @@ public:
 	Passenger(string name, string firstName, int age);
 	void print();
 	void userInput();
-	void setName(string name);
+	bool setName(string name);
 	string getName();
-	void setFirstName(string firstName);
+	bool setFirstName(string firstName);
 	string getFirstName();
-	void setAge(int age);
+	bool setAge(int age);
 	int getAge();
 private:
 	bool isValidAge(int age);

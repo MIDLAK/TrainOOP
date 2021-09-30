@@ -38,9 +38,13 @@ TrainRoute Train::getTrainRoute() {
 }
 
 
-void Train::setTrainID(int trainID) {
+bool Train::setTrainID(int trainID) {
 	if (isValidTrainID(trainID)) {
 		this->trainID = trainID;
+		return true;
+	}
+	else {
+		return false;
 	}
 }
 
@@ -50,9 +54,13 @@ int Train::getTrainID() {
 }
 
 
-void Train::setCapacity(int capacity) {
+bool Train::setCapacity(int capacity) {
 	if (isValidCapcity(capacity)) {
 		this->capacity = capacity;
+		return true;
+	}
+	else {
+		return false;
 	}
 }
 

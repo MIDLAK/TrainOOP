@@ -30,9 +30,13 @@ TrainRoute::TrainRoute(string departure, string destination, Date departureDate,
 }
 
 
-void TrainRoute::setDeparture(string departure) {
+bool TrainRoute::setDeparture(string departure) {
 	if (isValidDeparture(departure)) {
 		this->departure = departure;
+		return true;
+	}
+	else {
+		return false;
 	}
 }
 
@@ -42,9 +46,13 @@ string TrainRoute::getDeparture() {
 }
 
 
-void TrainRoute::setDestination(string destination) {
+bool TrainRoute::setDestination(string destination) {
 	if (isValidDestination(destination)) {
 		this->destination = destination;
+		return true;
+	}
+	else {
+		return false;
 	}
 }
 
@@ -54,8 +62,9 @@ string TrainRoute::getDestination() {
 }
 
 
-void TrainRoute::setDepartureDate(Date departureDate) {
+bool TrainRoute::setDepartureDate(Date departureDate) {
 	this->departureDate = departureDate;
+	return true;
 }
 
 
@@ -64,8 +73,9 @@ Date TrainRoute::getDepartureDate() {
 }
 
 
-void TrainRoute::setDepartureTime(Time departureTime) {
+bool TrainRoute::setDepartureTime(Time departureTime) {
 	this->departureTime = departureTime;
+	return true;
 }
 
 
@@ -74,8 +84,9 @@ Time TrainRoute::getDepartureTime() {
 }
 
 
-void TrainRoute::setDestinationDate(Date destinationDate) {
+bool TrainRoute::setDestinationDate(Date destinationDate) {
 	this->destinationDate = destinationDate;
+	return true;
 }
 
 
@@ -84,8 +95,9 @@ Date TrainRoute::getDestinationDate() {
 }
 
 
-void TrainRoute::setDestinationTime(Time destinationTime) {
+bool TrainRoute::setDestinationTime(Time destinationTime) {
 	this->destinationTime = destinationTime;
+	return true;
 }
 
 

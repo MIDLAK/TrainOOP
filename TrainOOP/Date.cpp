@@ -29,9 +29,14 @@ int Date::getDay() {
 }
 
 
-void Date::setDay(int day) {
-	if (isValidDate(day, this->month, this->year));
+bool Date::setDay(int day) {
+	if (isValidDate(day, this->month, this->year)) {
 		this->day = day;
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 
@@ -40,9 +45,14 @@ int Date::getMonth() {
 }
 
 
-void Date::setMonth(int month) {
-	if (isValidDate(this->day, month, this->year));
+bool Date::setMonth(int month) {
+	if (isValidDate(this->day, month, this->year)) {
 		this->month = month;
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 
@@ -51,8 +61,14 @@ int Date::getYear() {
 }
 
 
-void Date::setYear(int year) {
-	if (isValidDate(this->day, this->month, this->year));
+bool Date::setYear(int year) {
+	if (isValidDate(this->day, this->month, year)) {
+		this->year = year;
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 

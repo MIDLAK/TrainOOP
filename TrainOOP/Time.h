@@ -10,9 +10,9 @@ public:
 	Time();
 	Time(int hour, int minute);
 	int getHour();
-	void setHour(int hour);
+	bool setHour(int hour);
 	int getMinute();
-	void setMinute(int minute);
+	bool setMinute(int minute);
 	void print();
 	void userInput();
 

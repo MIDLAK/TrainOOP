@@ -20,17 +20,17 @@ private:
 public:
 	TrainRoute();
 	TrainRoute(string departure, string destination, Date departureDate, Time departureTime, Date destinationDate, Time destinationTime);
-	void setDeparture(string departure);
+	bool setDeparture(string departure);
 	string getDeparture();
-	void setDestination(string destination);
+	bool setDestination(string destination);
 	string getDestination();
-	void setDepartureDate(Date departureDate);
+	bool setDepartureDate(Date departureDate);
 	Date getDepartureDate();
-	void setDestinationDate(Date destinationDate);
+	bool setDestinationDate(Date destinationDate);
 	Date getDestinationDate();
-	void setDepartureTime(Time departureTime);
+	bool setDepartureTime(Time departureTime);
 	Time getDepartureTime();
-	void setDestinationTime(Time destinationTime);
+	bool setDestinationTime(Time destinationTime);
 	Time getDestinationTime();
 private:
 	bool isValidDeparture(string departure);

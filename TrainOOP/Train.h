@@ -15,9 +15,9 @@ private:
 public:
 	Train();
 	Train(TrainRoute route, int trainID, int capacity);
-	void setTrainID(int trainID);
+	bool setTrainID(int trainID);
 	int getTrainID();
-	void setCapacity(int capacity);
+	bool setCapacity(int capacity);
 	int getCapacity();
 	bool setTrainRoute(TrainRoute route);
 	TrainRoute getTrainRoute();

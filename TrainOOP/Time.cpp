@@ -27,9 +27,13 @@ int Time::getHour() {
 }
 
 
-void Time::setHour(int hour) {
+bool Time::setHour(int hour) {
 	if (isValidHour(hour)) {
 		this->hour = hour;
+		return true;
+	}
+	else {
+		return false;
 	}
 }
 
@@ -39,9 +43,13 @@ int Time::getMinute() {
 }
 
 
-void Time::setMinute(int minute) {
+bool Time::setMinute(int minute) {
 	if (isValidMinute(minute)) {
 		this->minute = minute;
+		return true;
+	}
+	else {
+		return false;
 	}
 }
 
