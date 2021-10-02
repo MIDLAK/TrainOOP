@@ -23,7 +23,14 @@ int main() {
 
 	Time time = Time(55, 22);
 	time.print();
-	time.userInput();
+	bool isTime = time.userInput();
+	if (isTime) {
+		cout << "\nВремя введено верно, это очень здорово.";
+	}
+	else {
+		cout << "\nВремя введено неверно, это очень плохо.";
+	}
+	time.print();
 
 	Date date = Date(27, 9, 2021);
 	date.print();

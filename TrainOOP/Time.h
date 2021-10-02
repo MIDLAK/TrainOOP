@@ -14,9 +14,10 @@ public:
 	int getMinute();
 	bool setMinute(int minute);
 	void print();
-	void userInput();
+	bool userInput();
 
 private:
+	bool isNumber(char* word);
 	bool isValidHour(int hour);
 	bool isValidMinute(int minute);
 };

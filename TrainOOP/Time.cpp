@@ -71,8 +71,7 @@ void Time::print() {
 }
 
 
-/*TODO: нужно дописать*/
-void Time::userInput() {
+bool Time::userInput() {
 	int hour = 0;
 	int minute = 0;
 	string input;
@@ -80,16 +79,48 @@ void Time::userInput() {
 	cout << "\nВремя отправления (ЧЧ:ММ)\n";
 	cin >> input;
 
-	char* p = new char[input.length()];
-	char* word = strtok(new char[input.length()], ":");	//разбили строку input на слова по ":"
+	char* p = _strdup(input.c_str());
+	char* word = strtok(/*new char[input.length()+1]*/p, ":");	//разбили строку input на слова по ":"
 
-	int inputOnlyNumbers = 0;
-	while (word != NULL) {
-		cout << *word << "\n";
+	/*весь этот кусок нужен для того, чтобы вычленить первые две цифры, разделённые двоеточием из введённой строки, и проверить их*/
+	int hourOrMinute = 0;
+	while (word != NULL && hourOrMinute < 2){
+		if (isNumber(word)) {
+			int wordInNumber = atoi(word);
+			if (isValidMinute(wordInNumber) && hourOrMinute == 1) {
+				minute = wordInNumber;
+				hourOrMinute++;
+			}
+			if (isValidHour(wordInNumber) && hourOrMinute == 0) {
+				hour = wordInNumber;
+				hourOrMinute++;
+			}
+			if (hourOrMinute == 2) {
+				this->hour = hour;
+				this->minute = minute;
+				return true;
+			}
+		}
+		else {
+			return false;
+			break;
+		}
 		word = strtok(NULL, ":");
 	}
+	return false;	//если каким-то образом while не начнёт работу
+
+}
 
 
+bool Time::isNumber(char* word) {
+	bool rez = true;
+	for (int i = 0, len = strlen(word); i < len; i++) {
+		if (isdigit(*(word + 1)) == 0) {
+			rez = false;
+			break;
+		}
+	}
+	return rez;
 }
 
 
