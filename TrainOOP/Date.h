@@ -15,7 +15,7 @@ public:
 	int getYear();
 	bool setYear(int year);
 	void print();
-	void userIput();
+	bool userIput();
 private:
 	bool isValidDate(int day, int month, int year);
 };

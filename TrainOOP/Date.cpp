@@ -72,7 +72,7 @@ bool Date::setYear(int year) {
 }
 
 
-void Date::userIput() {
+bool Date::userIput() {
 	cout << "\nВведите...";
 	cout << "\nДень: ";
 	int day = 0;
@@ -90,9 +90,10 @@ void Date::userIput() {
 		this->day = day;
 		this->month = month;
 		this->year = year;
+		return true;
 	}
 	else {
-		cout << "\nВведена некорректная дата (или сегодня 29 февраля, а я ещё об этом не позаботился)";
+		return false;
 	}
 }
 

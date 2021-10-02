@@ -82,6 +82,7 @@ bool Time::userInput() {
 	char* p = _strdup(input.c_str());
 	char* word = strtok(/*new char[input.length()+1]*/p, ":");	//разбили строку input на слова по ":"
 
+
 	/*весь этот кусок нужен для того, чтобы вычленить первые две цифры, разделённые двоеточием из введённой строки, и проверить их*/
 	int hourOrMinute = 0;
 	while (word != NULL && hourOrMinute < 2){
@@ -105,6 +106,8 @@ bool Time::userInput() {
 			return false;
 			break;
 		}
+
+
 		word = strtok(NULL, ":");
 	}
 	return false;	//если каким-то образом while не начнёт работу

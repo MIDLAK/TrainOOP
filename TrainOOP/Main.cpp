@@ -21,25 +21,31 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	Time time = Time(55, 22);
+	Time time = Time(22, 55);
 	time.print();
 	bool isTime = time.userInput();
 	if (isTime) {
-		cout << "\nВремя введено верно, это очень здорово.";
+		cout << "\nВремя введено верно. Это очень здорово.";
 	}
 	else {
-		cout << "\nВремя введено неверно, это очень плохо.";
+		cout << "\nВремя введено неверно. Это очень плохо.";
 	}
 	time.print();
 
 	Date date = Date(27, 9, 2021);
 	date.print();
-	date.userIput();
+	bool isDate = date.userIput();
+	if (!isDate) {
+		cout << "\nВведена некорректная дата (или сегодня 29 февраля, а я ещё об этом не позаботился)";
+	}
 	date.print();
 	
 	Passenger pas = Passenger("Вадим", "Калуга", 19);
 	pas.print();
-	pas.userInput();
+	bool isPassenger = pas.userInput();
+	if (!isPassenger) {
+		cout << "\nВНИМАНИЕ! Ошибка при вводе данных пассажира!";
+	}
 	pas.print();
 
 	Date d1 = Date(28, 9, 2021);

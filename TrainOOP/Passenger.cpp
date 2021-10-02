@@ -74,7 +74,7 @@ int Passenger::getAge() {
 }
 
 
-void Passenger::userInput() {
+bool Passenger::userInput() {
 	cout << "\nÂâåäèòå...";
 
 	cout << "\nÈìÿ: ";
@@ -93,9 +93,10 @@ void Passenger::userInput() {
 		this->name = name;
 		this->firstName = firstName;
 		this->age = age;
+		return true;
 	}
 	else {
-		cout << "\nÂÍÈÌÀÍÈÅ! Îøèáêà ïğè ââîäå äàííûõ ïàññàæèğà!";
+		return false;
 	}
 }
 

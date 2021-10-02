@@ -15,7 +15,7 @@ public:
 	Passenger();
 	Passenger(string name, string firstName, int age);
 	void print();
-	void userInput();
+	bool userInput();
 	bool setName(string name);
 	string getName();
 	bool setFirstName(string firstName);
