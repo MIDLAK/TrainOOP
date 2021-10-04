@@ -58,4 +58,14 @@ int main() {
 
 	Ticket tk = Ticket(500, 125, pas, tr);
 	tk.print();
+
+	int numberOfTrains;
+	cout << "\nКоличество поездов для ДИНАМИЧЕСКОГО массива: ";
+	cin >> numberOfTrains;
+	Train* trainArrayPtr = new Train[numberOfTrains];
+	for (int i = 0; i < numberOfTrains; i++) {
+		(trainArrayPtr + i)->setTrainID(i+1);
+		cout << "\n Поезд номер :" << (trainArrayPtr+i)->getTrainID();
+	}
+
 }
