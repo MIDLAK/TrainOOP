@@ -67,5 +67,4 @@ int main() {
 		(trainArrayPtr + i)->setTrainID(i+1);
 		cout << "\n Поезд номер :" << (trainArrayPtr+i)->getTrainID();
 	}
-
 }
