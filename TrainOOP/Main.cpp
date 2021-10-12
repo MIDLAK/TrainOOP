@@ -10,6 +10,7 @@
 #include "Time.h"
 #include "Date.h"
 #include "Passenger.h"
+#include "ParkingSpace.h"
 #include "TrainRoute.h"
 #include "Train.h"
 #include "Ticket.h"
@@ -39,8 +40,16 @@ int main() {
 		cout << "\nВведена некорректная дата (или сегодня 29 февраля, а я ещё об этом не позаботился)";
 	}
 	date.print();
-	
+
+
+	ParkingSpace* ps = new ParkingSpace();
+
 	Passenger pas = Passenger("Вадим", "Калуга", 19);
+
+	if (pas.setParkingSpace(ps)) {
+		cout << "\nВаше парковочное место: " << pas.getParkingSpace()->getNumber();
+	}
+
 	pas.print();
 	bool isPassenger = pas.userInput();
 	if (!isPassenger) {

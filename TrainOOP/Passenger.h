@@ -2,12 +2,15 @@
 #include <iostream>
 #include <string.h>
 
+#include "ParkingSpace.h"
+
 using namespace std;
 
 
 class Passenger
 {
 private:
+	ParkingSpace* parkingSpace;
 	string name;
 	string firstName;
 	int age;
@@ -22,6 +25,8 @@ public:
 	string getFirstName();
 	bool setAge(int age);
 	int getAge();
+	bool setParkingSpace(ParkingSpace* parkingSpace);
+	ParkingSpace* getParkingSpace();
 private:
 	bool isValidAge(int age);
 	bool isValidName(string name);

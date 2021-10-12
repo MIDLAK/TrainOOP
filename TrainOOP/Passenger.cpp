@@ -43,7 +43,7 @@ string Passenger::getName() {
 
 
 bool Passenger::setFirstName(string firstName) {
-	if (isValidFirstName(firstName)) {
+	if (!isValidFirstName(firstName)) {
 		this->firstName = firstName;
 		return true;
 	}
@@ -71,6 +71,27 @@ bool Passenger::setAge(int age) {
 
 int Passenger::getAge() {
 	return age;
+}
+
+
+bool Passenger::setParkingSpace(ParkingSpace* parkingSpace) {
+	if (parkingSpace != NULL) {
+		if (!parkingSpace->getIsTaken()) {
+			this->parkingSpace = parkingSpace;
+			return true;
+		}
+	}
+	return false;
+}
+
+
+ParkingSpace* Passenger::getParkingSpace() {
+	if (parkingSpace != NULL) {
+		return parkingSpace;
+	}
+	else {
+		cout << "\nЯ не знаю, что тебе вернуть. Ведь ты не передавал парковочных мест.";
+	}
 }
 
 
