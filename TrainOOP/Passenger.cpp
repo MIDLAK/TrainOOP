@@ -77,6 +77,7 @@ int Passenger::getAge() {
 bool Passenger::setParkingSpace(ParkingSpace* parkingSpace) {
 	if (parkingSpace != NULL) {
 		if (!parkingSpace->getIsTaken()) {
+			parkingSpace->takeON();
 			this->parkingSpace = parkingSpace;
 			return true;
 		}

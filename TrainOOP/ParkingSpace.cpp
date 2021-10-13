@@ -75,13 +75,13 @@ int ParkingSpace::getNumber() {
 }
 
 
-//Освободить место
+/*Освободить место*/
 void ParkingSpace::takeOF() {
 	isTaken = false;
 }
 
 
-//Занять место
+/*Занять место*/
 void ParkingSpace::takeON() {
 	isTaken = true;
 }
