@@ -32,6 +32,8 @@ public:
 	Time getDepartureTime();
 	bool setDestinationTime(Time destinationTime);
 	Time getDestinationTime();
+
+	friend const TrainRoute operator+(const TrainRoute& left, const TrainRoute& right);
 private:
 	bool isValidDeparture(string departure);
 	bool isValidDestination(string destination);

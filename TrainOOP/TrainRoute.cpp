@@ -30,6 +30,12 @@ TrainRoute::TrainRoute(string departure, string destination, Date departureDate,
 }
 
 
+const TrainRoute operator+(const TrainRoute& left, const TrainRoute& right) {
+	TrainRoute rezult = TrainRoute(left.departure, right.destination, left.departureDate, left.departureTime, right.destinationDate, right.destinationTime);
+	return rezult;
+}
+
+
 bool TrainRoute::setDeparture(string departure) {
 	if (isValidDeparture(departure)) {
 		this->departure = departure;

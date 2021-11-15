@@ -22,6 +22,11 @@ public:
 	bool setTrainRoute(TrainRoute route);
 	TrainRoute getTrainRoute();
 	void tutu();
+
+	//префиксный инкремент
+	friend const Train& operator++(Train& train);
+	//постфиксный инкремент
+	friend const Train operator++(Train& train, int);
 private:
 	bool isValidCapcity(int capacity);
 	bool isValidTrainID(int trainID);

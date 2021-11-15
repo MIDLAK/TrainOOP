@@ -27,6 +27,20 @@ Train::Train(TrainRoute route, int trainID, int capacity) {
 }
 
 
+//префиксная версия добавляет одно месо
+const Train& operator++(Train& train) {
+	train.capacity++;
+	return train;
+}
+
+
+//постфиксная версия добавляет вагон к поезду
+const Train operator++(Train& train, int) {
+	train.capacity += 100; //добавляем вагон к поезду	
+	return train;
+}
+
+
 bool Train::setTrainRoute(TrainRoute route) {
 	this->route = route;
 	return true;
