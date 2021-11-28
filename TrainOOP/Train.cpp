@@ -12,6 +12,7 @@ Train::Train() {
 	capacity = 0;
 }
 
+Train::Train(int trainID) : Train(TrainRoute(), trainID, 1) {}
 
 Train::Train(TrainRoute route, int trainID, int capacity) {
 	if (isValidCapcity(capacity), isValidTrainID(trainID)) {
@@ -26,13 +27,14 @@ Train::Train(TrainRoute route, int trainID, int capacity) {
 	}
 }
 
+//конструктор копирования
+Train::Train(const Train& otherTrain) : trainID(otherTrain.trainID), capacity(otherTrain.capacity), route(otherTrain.route) {}
 
-//префиксная версия добавляет одно месо
+//префиксная версия добавляет одно место
 const Train& operator++(Train& train) {
 	train.capacity++;
 	return train;
 }
-
 
 //постфиксная версия добавляет вагон к поезду
 const Train operator++(Train& train, int) {
@@ -40,6 +42,14 @@ const Train operator++(Train& train, int) {
 	return train;
 }
 
+//оператор присваивания
+Train& Train::operator= (const Train* train) {
+	route = train->route;
+	trainID = train->trainID;
+	capacity = train->capacity;
+	// Возвращаем сформированный объект
+	return *this;
+}
 
 bool Train::setTrainRoute(TrainRoute route) {
 	this->route = route;
@@ -91,4 +101,8 @@ bool Train::isValidCapcity(int capacity) {
 
 bool Train::isValidTrainID(int trainID) {
 	return (trainID > 0) ? true : false;
+}
+
+void Train::tutu() {
+	cout << "ТУУУ-ТУУУ";
 }
