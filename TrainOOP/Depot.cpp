@@ -21,8 +21,8 @@ void Depot::toParkTrain(Train* train) {
 
 		for (int i = 0; i < parkingCapacity; i++) {
 			if (trains[i] == NULL && b) {
-				//trains[i] = new Train(train->getTrainRoute(), train->getTrainID(), train->getCapacity());	//инициализаци€ €чеек
-				train[i] = train;
+				trains[i] = new Train(train->getTrainRoute(), train->getTrainID(), train->getCapacity());	//инициализаци€ €чеек
+				//train[i] = train;
 				break;
 			}
 		}
