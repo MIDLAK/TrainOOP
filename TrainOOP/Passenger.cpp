@@ -108,8 +108,14 @@ bool Passenger::userInput() {
 	cin >> firstName;
 
 	cout << "\nВозраст: ";
+
 	int age = 0;
-	cin >> age;
+	string age_str;
+	cin >> age_str;
+	if (!atoi(age_str.c_str()))
+		throw 123;
+
+
 
 	if ((isValidAge(age) && isValidName(name) && isValidFirstName(firstName))) {
 		this->name = name;

@@ -47,7 +47,6 @@ Train& Train::operator= (const Train* train) {
 	route = train->route;
 	trainID = train->trainID;
 	capacity = train->capacity;
-	// Возвращаем сформированный объект
 	return *this;
 }
 

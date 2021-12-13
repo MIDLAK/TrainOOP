@@ -27,7 +27,7 @@ int main() {
 
 	ParkingSpace* ps = new ParkingSpace();
 
-	Passenger pas = Passenger("Вадим", "Калуга", 19);
+	Passenger pas = Passenger("Калуга", "Вадим", 19);
 
 	pas.setParkingSpace(ps);
 
@@ -42,7 +42,7 @@ int main() {
 	Date d4 = Date(7, 10, 2021);
 	Time t4 = Time(6, 55);
 	TrainRoute rt2 = TrainRoute("Омск", "Москва", d3, t3, d4, t4);
-	
+
 	cout << "\n----------*Демонстрация конструкторов*----------\n";
 	Train train501 = Train(501);
 	cout << "Поезд cтатический train501: " << train501.getTrainID();
@@ -56,9 +56,9 @@ int main() {
 	cout << "\n------------------------------------------------\n";
 
 
-	Train *train1 = new Train(56);
-	Train *train2 = new Train(77);
-	Train *train3 = new Train(81);
+	Train* train1 = new Train(56);
+	Train* train2 = new Train(77);
+	Train* train3 = new Train(81);
 
 	Depot depot = Depot(3);
 	depot.toParkTrain(train1);
@@ -69,7 +69,7 @@ int main() {
 
 
 
-	Train tr = Train(rt1+rt2, 654, 200);
+	Train tr = Train(rt1 + rt2, 654, 200);
 	cout << "\nДО постинкремента " << tr.getCapacity();
 	tr++;
 	cout << "\nПОСЛЕ постинкремента " << tr.getCapacity();
@@ -86,7 +86,41 @@ int main() {
 	cin >> numberOfTrains;
 	Train* trainArrayPtr = new Train[numberOfTrains];
 	for (int i = 0; i < numberOfTrains; i++) {
-		(trainArrayPtr + i)->setTrainID(i+1);
-		cout << "\n Поезд номер :" << (trainArrayPtr+i)->getTrainID();
+		(trainArrayPtr + i)->setTrainID(i + 1);
+		cout << "\n Поезд номер :" << (trainArrayPtr + i)->getTrainID();
 	}
+
+	Ticket** tickets = new Ticket * [numberOfTrains];
+	for (int i = 0; i < numberOfTrains; i++) {
+		tickets[i] = new Ticket[2];
+	}
+
+	for (int i = 0; i < numberOfTrains; i += 2) {
+		cout << '\n';
+		for (int j = 0; j < 2; j++) {
+			if (j == 0)
+				tickets[i][j] = Ticket(j + 10 * i, i + j + 1, Passenger(), *(trainArrayPtr + i));
+			if (i >= numberOfTrains - 1) {
+				cout << " [Поезд №" << tickets[i][j].getTrain().getTrainID() << "(Цена биллета: " << tickets[i][j].getPrice() << ")]";
+				break;
+			}
+			if (j == 1)
+				tickets[i][j] = Ticket(j + 10 * i, i + j + 1, Passenger(), *(trainArrayPtr + i + 1));
+
+			cout << " [Поезд №" << tickets[i][j].getTrain().getTrainID() << "(Цена биллета: " << tickets[i][j].getPrice() << ")]";
+		}
+	}
+
+
+	//Ticket** ticketArrayPtr = new Ticket * [numberOfTrains](); // массив биллетов (пока null)
+	//for (int i = 0; i < numberOfTrains; i++) {
+	//	ticketArrayPtr[i] = new Ticket[i+1](); // формирование треугольного массива
+	//	for (int j = 0; j < i+1; i++) {
+	//		/*выделение памяти под очередной биллет*/
+	//		ticketArrayPtr[i][j] = Ticket(100+i, i + j + 1, Passenger(), *(trainArrayPtr + i));
+	//		ticketArrayPtr[i][j].setTrain(*(trainArrayPtr + i));
+	//		ticketArrayPtr[i][j].setPrice(100 + i);
+	//		cout << "[Поезд №" << ticketArrayPtr[i][j].getTrain().getTrainID() << "(Цена биллета: " << ticketArrayPtr[i][j].getPrice() << ")]";
+	//	}
+	//}
 }
